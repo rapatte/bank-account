@@ -1,12 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { appRepository } from './app.repository';
 
 @Injectable()
 export class AppService {
-  const baseAccount = 50;
-  getHello(): number {
-    return this.baseAccount;
+  getHello(): string {
+    return 'Hello World!';
   }
+
   deposit(amount): number {
-    return this.baseAccount + amount;
+    return appRepository.add(amount);
   }
 }

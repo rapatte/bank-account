@@ -6,12 +6,12 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): number {
+  getHello(): string {
     return this.appService.getHello();
   }
 
   @Post()
   deposit(amount): number {
-    return this.appService.deposit(money + amount);
+    return this.appService.deposit(amount);
   }
 }
